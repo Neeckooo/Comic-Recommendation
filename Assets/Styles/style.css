@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700&family=Quicksand:wght@500;700&display=swap");
+
+#data {display: none;}
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+button{
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    border: solid black 0,1px;
+}
+
+body{
+
+    font-family: "Inconsolata", monospace;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: inline;
+}
+
+.navbar {
+    display: flex;
+    border: black solid 1px;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    padding: 10px;
+}
+
+.burger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(0, 0, 0);
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    padding-inline: 4rem;
+    list-style-type: none;
+}
+
+.nav-a {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: black;
+    text-decoration: none;
+}
+
+.nav-a:hover {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+main{
+    padding: 20px;
+    display: flex;
+    gap: 2rem;
+    color: black;
+}
+
+aside{
+    flex: 1;
+}
+
+ul{
+    padding-inline-start: 0px;
+}
+
+footer{
+    text-align: center;
+    padding: 1px;
+    /* color: white; */
+    background-color: white;
+    border: solid black 1px;
+}
+
+#content{
+    flex: 5;
+    /* display: flex; */
+    flex-flow: nowrap;
+    gap: 1rem 2rem;
+}
+
+.jumbotron{
+    font-size: 20px;
+    padding: 50px;
+    text-align: center;
+    border: black 1px solid;
+    
+}
+
+.profile header{
+    text-align: center;
+}
+
+.featured-image{
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border: solid black 1px;
+}
+
+.profile img{
+    transition: 0.25s;
+    width: 200px;
+    margin-bottom: 10px;
+    border: solid black 1px;
+}
+
+.profile h3, .profile p{
+    text-align: center;
+}
+
+.card{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px 50px;
+    margin: 10px 0px;
+    border: 1px solid black;
+}
+
+table{
+    margin: auto;
+
+}
+
+ol li{
+    margin-left: -15px;
+    font-weight: bold;
+
+}
+
+li p{
+    font-weight: normal;
+}
+
+table th{
+    text-align: left;
+}
+
+main p{
+    text-align: justify;
+    line-height: 25px;
+}
+
+@media screen and (max-width: 1000px) {
+  #content,
+  aside {
+    width: 100%;
+    padding: 0;
+  }
+
+  main aside {
+    align-content: center;
+  }
+
+  main {
+    flex-flow: column nowrap;
+  }
+}
+
+/*Responsive*/
+@media only screen and (max-width: 900px) {
+    .nav-menu {
+        display: block;
+        position: fixed;
+        left: -100%;
+        top: 35px;
+        flex-direction: column;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        transition: 0.5s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        z-index: 999;
+        border: black 1px solid;
+    }
+
+    .nav-menu.active {
+        left: 0%;
+    }
+
+    .nav-item {
+        margin: 2rem 0;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .burger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
